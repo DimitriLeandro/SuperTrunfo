@@ -98,20 +98,21 @@
 								<img id="imagem_1" src="images/tubarao/<?php echo $row_carta_jogador_1[0]; ?>.jpg" class="img-responsive" alt=""/>
 							</div>
 							<div id="atributos" style="text-align: left; padding-left: inherit; font-size: medium;">
-								<p onclick="atributo_selecionado = 1; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
+								<p onclick="ativar_botao('btn_jogar_a'); atributo_selecionado = 1; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
 									<b>Comprimento(m):</b> 
 									<i id="att_1_a"><?php echo $row_carta_jogador_1[2]; ?></i> 
 								</p>
-								<p onclick="atributo_selecionado = 2; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
+								<p onclick="ativar_botao('btn_jogar_a'); atributo_selecionado = 2; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
 									<b>Peso(Kg):</b> 
 									<i id="att_2_a"><?php echo $row_carta_jogador_1[3]; ?></i> 
 								</p>
-								<p onclick="atributo_selecionado = 3; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
+								<p onclick="ativar_botao('btn_jogar_a'); atributo_selecionado = 3; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
 									<b>Velocidade(Km/h):</b> 
 									<i id="att_3_a"><?php echo $row_carta_jogador_1[4]; ?></i> 
 								</p>
 							</div>
-							<a href="#" class="button hvr-sweep-to-bottom" onclick="jogar();">Jogar</a>
+							<br/>
+							<button disabled id="btn_jogar_a" style=" border-style: none; width: 100%; height: 50px; background: #dddddd; color: white;" onclick="jogar();">Jogar</button>
 						</div>
 						
 						
@@ -121,20 +122,21 @@
 								<img id="imagem_2" src="images/tubarao/<?php echo $row_carta_jogador_2[0]; ?>.jpg" class="img-responsive" alt=""/>
 							</div>
 							<div id="atributos" style="text-align: left; padding-left: inherit; font-size: medium;">
-								<p onclick="atributo_selecionado = 1; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
+								<p onclick="ativar_botao('btn_jogar_b'); atributo_selecionado = 1; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
 									<b>Comprimento(m):</b> 
 									<i id="att_1_b"><?php echo $row_carta_jogador_2[2]; ?></i> 
 								</p>
-								<p onclick="atributo_selecionado = 2; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
+								<p onclick="ativar_botao('btn_jogar_b'); atributo_selecionado = 2; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
 									<b>Peso(Kg):</b> 
 									<i id="att_2_b"><?php echo $row_carta_jogador_2[3]; ?></i> 
 								</p>
-								<p onclick="atributo_selecionado = 3; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
+								<p onclick="ativar_botao('btn_jogar_b'); atributo_selecionado = 3; $('p').css('color', '#999'); $(this).css('color', 'deeppink');" style="cursor:pointer">
 									<b>Velocidade(Km/h):</b> 
 									<i id="att_3_b"><?php echo $row_carta_jogador_2[4]; ?></i> 
 								</p>
 							</div>
-							<a href="#" class="button hvr-sweep-to-bottom" onclick="jogar();">Jogar</a>
+							<br/>
+							<button disabled id="btn_jogar_b" style=" border-style: none; width: 100%; height: 50px; background: #dddddd; color: white;" onclick="jogar();">Jogar</button>
 						</div>
 						
 						

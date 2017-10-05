@@ -140,6 +140,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				
 				//exibindo
 				$(".alert_vencedor").fadeIn(2500);
+				
+				//desabilitando os botões
+				$("#btn_jogar_a").attr("disabled", true);
+				$("#btn_jogar_b").attr("disabled", true);
+				$("#btn_jogar_a").css("background-color", "#dddddd");
+				$("#btn_jogar_b").css("background-color", "#dddddd");
 			}
 		
 			$(document).ready(function(){
@@ -278,6 +284,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					$("#att_3_b").text("???");
 					$("#imagem_2").attr("src", "images/incognita.png");
 				}
+			}
+			
+			function ativar_botao(botao)
+			{
+				var btn = "#"+botao+"";
+				$(btn).attr("disabled", false);
+				$(btn).css("background-color", "#17c2a4");
 			}
 		</script>
 </body>
