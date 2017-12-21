@@ -1,17 +1,22 @@
 <?php
+	header('Content-Type: text/html; charset=UTF-8');
+
 	//conexão
 	$link = new mysqli("localhost","root","root","db_super_trunfo");
 	if ($link->connect_errno)
 	{
 		echo "Erro ao conectar com o Banco de Dados"; 
 	}
+
+	mysqli_set_charset($link, "utf8");
 	
 	
 	//SORTEANDO AS CARTAS AS CARTAS
 	if(isset($_GET['sortear']))
 	{
 		$stmt = $link->prepare("DELETE FROM tb_jogador_carta WHERE cd_jogador > ?;");
-		$stmt->bind_param("i", $zero = 0);
+		$stmt->bind_param("i", $zero);
+		$zero = 0;
 		$stmt->execute();
 				
 		if($stmt->affected_rows == 0)
@@ -53,22 +58,25 @@
 		
 		if($_GET['vencedor_rodada'] == 0)
 		{
+			$jogador_a = 1;
 			$stmt = $link->prepare("INSERT INTO tb_jogador_carta VALUES (?, ?), (?, ?);");
-			$stmt->bind_param("iiii", $jogador_a = 1, $_GET['cd_carta_a'], $jogador_a = 2, $_GET['cd_carta_b']);
+			$stmt->bind_param("iiii", $jogador_a, $_GET['cd_carta_a'], $jogador_a, $_GET['cd_carta_b']);
 			$stmt->execute();
 		}
 		else
 		{
 			if($_GET['vencedor_rodada'] == 1)
 			{
+				$jogador_a = 1;
 				$stmt = $link->prepare("INSERT INTO tb_jogador_carta VALUES (?, ?), (?, ?);");
-				$stmt->bind_param("iiii", $jogador_a = 1, $_GET['cd_carta_a'], $jogador_a = 1, $_GET['cd_carta_b']);
+				$stmt->bind_param("iiii", $jogador_a, $_GET['cd_carta_a'], $jogador_a, $_GET['cd_carta_b']);
 				$stmt->execute();
 			}
 			else
 			{
+				$jogador_a = 2;
 				$stmt = $link->prepare("INSERT INTO tb_jogador_carta VALUES (?, ?), (?, ?);");
-				$stmt->bind_param("iiii", $jogador_a = 2, $_GET['cd_carta_a'], $jogador_a = 2, $_GET['cd_carta_b']);
+				$stmt->bind_param("iiii", $jogador_a, $_GET['cd_carta_a'], $jogador_a, $_GET['cd_carta_b']);
 				$stmt->execute();
 			}
 		}

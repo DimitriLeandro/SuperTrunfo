@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 <title>Super Trunfo</title>
 <!---->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -9,7 +10,6 @@
 <link href="css/owl.carousel.css" rel="stylesheet">
 <!--for-mobile-apps-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="Vide" />
 <meta name="keywords" content="Aquatic Life Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
