@@ -9,8 +9,8 @@
 	}
 
 	mysqli_set_charset($link, "utf8");
-	
-	
+?>
+<?php
 	//SORTEANDO AS CARTAS AS CARTAS
 	if(isset($_GET['sortear']))
 	{
@@ -55,28 +55,28 @@
 		$stmt = $link->prepare("DELETE FROM tb_jogador_carta WHERE cd_carta = ? OR cd_carta = ?;");
 		$stmt->bind_param("ii", $_GET['cd_carta_a'], $_GET['cd_carta_b']);
 		$stmt->execute();
+
+		$jogador_1 = 1;
+		$jogador_2 = 2;
 		
 		if($_GET['vencedor_rodada'] == 0)
 		{
-			$jogador_a = 1;
 			$stmt = $link->prepare("INSERT INTO tb_jogador_carta VALUES (?, ?), (?, ?);");
-			$stmt->bind_param("iiii", $jogador_a, $_GET['cd_carta_a'], $jogador_a, $_GET['cd_carta_b']);
+			$stmt->bind_param("iiii", $jogador_1, $_GET['cd_carta_a'], $jogador_2, $_GET['cd_carta_b']);
 			$stmt->execute();
 		}
 		else
 		{
 			if($_GET['vencedor_rodada'] == 1)
 			{
-				$jogador_a = 1;
 				$stmt = $link->prepare("INSERT INTO tb_jogador_carta VALUES (?, ?), (?, ?);");
-				$stmt->bind_param("iiii", $jogador_a, $_GET['cd_carta_a'], $jogador_a, $_GET['cd_carta_b']);
+				$stmt->bind_param("iiii", $jogador_1, $_GET['cd_carta_a'], $jogador_1, $_GET['cd_carta_b']);
 				$stmt->execute();
 			}
 			else
 			{
-				$jogador_a = 2;
 				$stmt = $link->prepare("INSERT INTO tb_jogador_carta VALUES (?, ?), (?, ?);");
-				$stmt->bind_param("iiii", $jogador_a, $_GET['cd_carta_a'], $jogador_a, $_GET['cd_carta_b']);
+				$stmt->bind_param("iiii", $jogador_2, $_GET['cd_carta_a'], $jogador_2, $_GET['cd_carta_b']);
 				$stmt->execute();
 			}
 		}
