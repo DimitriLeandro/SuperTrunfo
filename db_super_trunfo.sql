@@ -1,3 +1,5 @@
+create database db_super_trunfo;
+use db_super_trunfo;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
 -- Host: localhost    Database: db_super_trunfo
